@@ -33,8 +33,6 @@ install.packages("devtools")
 install.packages(EpiEstim)
 ```
 
-* Make sure to calls 
-
 
 Thompson RN, Stockwin JE, van Gaalen RD, Polonsky JA, et al. Improved inference of time-varying reproduction numbers during infectious disease outbreaks. Epidemics (2019).[https://www.sciencedirect.com/science/article/pii/S1755436519300350](https://www.sciencedirect.com/science/article/pii/S1755436519300350)
 
