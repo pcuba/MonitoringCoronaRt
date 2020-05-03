@@ -40,10 +40,6 @@ Check [https://github.com/jstockwin/EpiEstimApp/wiki/Example:-EpiEstim-R-package
 * **Pablo Cuba Borda** - *April 29, 2020* 
 
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
 ## Disclaimer
 
 * The views expressed in this article are solely the responsibility of the authors and should not be interpreted as reflecting the views of the Board of Governors of the Federal Reserve System or of anyone else associated with the Federal Reserve System.
