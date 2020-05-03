@@ -32,7 +32,7 @@ Check [https://github.com/jstockwin/EpiEstimApp/wiki/Example:-EpiEstim-R-package
 ## Data sources
 
 * [https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_Bolivia](http://www.dropwizard.io/1.0.2/docs/ttps://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_Bolivia) - Incidence data for Bolivian Departments. 
-* [Maven https://github.com/CSSEGISandData/COVID-19.
+* [https://github.com/CSSEGISandData/COVID-19.
 ](https://maven.apache.org/ https://github.com/CSSEGISandData/COVID-19) - Incidence data by country from the Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) Coronavirus Project. 
 
 ## Authors
