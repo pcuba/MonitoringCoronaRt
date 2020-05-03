@@ -1,4 +1,4 @@
-# Monitoring Reproduction Number for Coronavirus Outbreaks
+# Monitoring the Reproduction Number for Coronavirus Outbreaks
 
  R-code to implement the estimation of time-varying reproduction rates
  as in Thompson et.al. (2019)"Improved inference of time-varying reproduction numbers during infectious
