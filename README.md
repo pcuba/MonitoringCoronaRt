@@ -16,13 +16,25 @@ Estimates for the mean and standard deviation of the serial interval were obtain
  International Journal of Infectious Diseases, Volume 93.
 
 
-### Libraries used
+### R version and libraries used
 
-The only required package is the EpiEstim package. 
+* These codes work on R version version 3.6.3
+
+* Make sure you have devtools installed
+
+```
+install.packages("devtools")
+```
+
+
+* The key required package is the EpiEstim.
 
 ```
 install.packages(EpiEstim)
 ```
+
+* Make sure to calls 
+
 
 Thompson RN, Stockwin JE, van Gaalen RD, Polonsky JA, et al. Improved inference of time-varying reproduction numbers during infectious disease outbreaks. Epidemics (2019).[https://www.sciencedirect.com/science/article/pii/S1755436519300350](https://www.sciencedirect.com/science/article/pii/S1755436519300350)
 
