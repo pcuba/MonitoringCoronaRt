@@ -27,7 +27,7 @@ install.packages("devtools")
 ```
 
 
-* The key required package is the EpiEstim.
+* The key required package is __EpiEstim__.
 
 ```
 install.packages(EpiEstim)
