@@ -26,6 +26,8 @@ library(EpiEstim)
 disease_incidence_data <- read.csv("IncidenceBolivia.csv", header = TRUE)
 disease_incidence_data$dates <- as.Date(disease_incidence_data$dates, "%d/%m/%y")
 
+# Estimate model for Bolivia. Data starts on 21/03/20 (obs 60), ends on 29/04/20 (obs 99)
+# Serial interval window = 8 days
 
 res_bo <- estimate_R(incid = disease_incidence_data$bolivia[60:99], method = "uncertain_si",
                      config = make_config(list(
@@ -37,6 +39,9 @@ res_bo <- estimate_R(incid = disease_incidence_data$bolivia[60:99], method = "un
                        n1 = 1000, n2 = 1000)))
 
 
+# Estimate model for La Paz. Data starts on 21/03/20 (obs 60), ends on 29/04/20 (obs 99)
+# Serial interval window = 8 days
+
 res_lp <- estimate_R(incid = disease_incidence_data$lpz[60:99], method = "uncertain_si",
                      config = make_config(list(
                        t_start = seq(2, 32), t_end = seq(10, 40),
@@ -46,6 +51,8 @@ res_lp <- estimate_R(incid = disease_incidence_data$lpz[60:99], method = "uncert
                        min_std_si = 1.9, max_std_si = 3.9,
                        n1 = 1000, n2 = 1000)))
 
+# Estimate model for Santa Cruz. Data starts on 21/03/20 (obs 60), ends on 29/04/20 (obs 99)
+# Serial interval window = 8 days
 
 res_sc <- estimate_R(incid = disease_incidence_data$scz[60:99], method = "uncertain_si",
                      config = make_config(list(
@@ -55,6 +62,9 @@ res_sc <- estimate_R(incid = disease_incidence_data$scz[60:99], method = "uncert
                        std_si = 2.9, std_std_si = 0.5,
                        min_std_si = 1.9, max_std_si = 3.9,
                        n1 = 1000, n2 = 1000)))
+
+# Estimate model for Cochabamba. Data starts on 21/03/20 (obs 60), ends on 29/04/20 (obs 99)
+# Serial interval window = 8 days
 
 res_cb <- estimate_R(incid = disease_incidence_data$cbb[60:99], method = "uncertain_si",
                      config = make_config(list(
@@ -66,6 +76,9 @@ res_cb <- estimate_R(incid = disease_incidence_data$cbb[60:99], method = "uncert
                        n1 = 1000, n2 = 1000)))
 
 
+# Estimate model for South Kore. Data starts on 22/02/20 (obs 32), ends on 29/04/20 (obs 99)
+# Serial interval window = 6 days
+
 res_sk <- estimate_R(incid = disease_incidence_data$southkorea[32:99], method = "uncertain_si",
                      config = make_config(list(
                        t_start = seq(2, 62), t_end = seq(8, 68),
@@ -75,6 +88,8 @@ res_sk <- estimate_R(incid = disease_incidence_data$southkorea[32:99], method = 
                        min_std_si = 1.9, max_std_si = 3.9,
                        n1 = 1000, n2 = 1000)))
 
+# Estimate model for Chile. Data starts on 11/03/20 (obs 50), ends on 29/04/20 (obs 99)
+# Serial interval window = 8 days
 
 res_ch <- estimate_R(incid = disease_incidence_data$chile[50:99], method = "uncertain_si",
                      config = make_config(list(
@@ -87,6 +102,8 @@ res_ch <- estimate_R(incid = disease_incidence_data$chile[50:99], method = "unce
 
 
 ## Visualize R estimates on the same plot
+# Need to map dates as in estimation
+
 res_sc$dates <-disease_incidence_data$dates[60:99]
 res_cb$dates <-disease_incidence_data$dates[60:99]
 res_lp$dates <-disease_incidence_data$dates[60:99]
@@ -95,11 +112,15 @@ res_bo$dates <-disease_incidence_data$dates[60:99]
 res_sk$dates <-disease_incidence_data$dates[32:99]
 res_ch$dates <-disease_incidence_data$dates[50:99]
 
+
+# Collect plots
+# Set ylim wide enough to avoid plot trimming.
+
 p_sc <-plot(res_sc, what = "R",  options_R = list(col = c("blue"),ylim=c(0,4), ylab = "Santa Cruz"),legend=FALSE) 
 p_lp <-plot(res_lp, what = "R",  options_R = list(col = c("blue"),ylim=c(0,4), ylab = "La Paz"),legend=FALSE) 
 p_cb <-plot(res_cb, what = "R",  options_R = list(col = c("blue"),ylim=c(0,4), ylab = "Cochabamba"),legend=FALSE) 
 p_bo <-plot(res_bo, what = "R",  options_R = list(col = c("blue"),ylim=c(0,4), ylab = "Bolivia"),legend=FALSE) 
-p_sk <-plot(res_sk, what = "R",  options_R = list(col = c("blue"),ylim=c(0,4), ylab = "Corea del Sur"),legend=FALSE) 
+p_sk <-plot(res_sk, what = "R",  options_R = list(col = c("blue"),ylim=c(0,4), ylab = "Corea del Sur"),legend=FALSE)
 p_ch <-plot(res_ch, what = "R",  options_R = list(col = c("blue"),ylim=c(0,4), ylab = "Chile"),legend=FALSE) 
 
 # Plot panel with Bolivian departments
